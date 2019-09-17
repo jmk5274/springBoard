@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="comments">
+	<select id="getCmtList" parameterType="int" resultType="cmtVo">
+		select * from comments where postnum = #{data}
+		order by cmtnum
+	</select>
+	
+	<insert id="insertCmt" parameterType="cmtVo">
+		insert into comments (cmtnum, cmtcont, cmtdate, postnum, userid, delstatus)
+   			values(comments_seq.nextval, #{cmtcont}, sysdate, #{postnum}, #{userid}, 'N')
+	</insert>
+	
+	<update id="deleteCmt" parameterType="int">
+		update comments set delstatus = 'Y' where cmtnum=#{cmtnum}
+	</update>
+</mapper>
