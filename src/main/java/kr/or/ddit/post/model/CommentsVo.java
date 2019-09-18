@@ -9,18 +9,18 @@ public class CommentsVo {
 	private String cmtcont;
 	private Date cmtdate;
 	private int postnum;
-	private String userid;
+	private String userId;
 	private String delstatus;
 
 	public CommentsVo() {
 	}
 
-	public CommentsVo(int cmtnum, String cmtcont, Date cmtdate, int postnum, String userid) {
+	public CommentsVo(int cmtnum, String cmtcont, Date cmtdate, int postnum, String userId) {
 		this.cmtnum = cmtnum;
 		this.cmtcont = cmtcont;
 		this.cmtdate = cmtdate;
 		this.postnum = postnum;
-		this.userid = userid;
+		this.userId = userId;
 	}
 
 	public String getDelstatus() {
@@ -64,11 +64,11 @@ public class CommentsVo {
 	}
 
 	public String getUserid() {
-		return userid;
+		return userId;
 	}
 
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setUserid(String userId) {
+		this.userId = userId;
 	}
 
 	public String getCmtdate_fmt() {

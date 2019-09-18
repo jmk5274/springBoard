@@ -58,7 +58,7 @@ public class SelectPostController extends HttpServlet {
 			request.setAttribute("boardNum", boardNum);
 			request.setAttribute("pvo", pvo);
 			request.setAttribute("cmtList", cmtList);
-			request.setAttribute("boardnm", request.getParameter("boardNm"));
+			request.setAttribute("boardNm", request.getParameter("boardNm"));
 			
 			request.getRequestDispatcher("/post/selectPost.jsp").forward(request, response);
 		}

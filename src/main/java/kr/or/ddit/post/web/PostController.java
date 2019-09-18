@@ -60,7 +60,7 @@ public class PostController extends HttpServlet {
 		List<PostVo> list = postServ.getPostList(map);
 		int paginationSize = (int)Math.ceil((double)pageList.size()/pagesize);
 		
-		request.setAttribute("boardnm", bvo.getBoardnm());
+		request.setAttribute("boardNm", bvo.getBoardnm());
 		request.setAttribute("res", res);
 		request.setAttribute("boardNum", boardNum);
 		request.setAttribute("postList", list);

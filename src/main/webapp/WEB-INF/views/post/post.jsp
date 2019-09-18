@@ -37,7 +37,7 @@
 <form id="frm" action="${cp }/selectPost" method="get">
 	<input type="hidden" id="postNum" name="postNum"/>
 	<input type="hidden" id="boardNum" name="boardNum" value="${boardNum }"/>
-	<input type="hidden" id="boardNm" name="boardNm" value="${boardnm }"/>
+	<input type="hidden" id="boardNm" name="boardNm" value="${boardNm }"/>
 </form>
 
 	<%@ include file="/WEB-INF/views/commonJsp/header.jsp"%>
@@ -56,7 +56,7 @@
 
 				<div class="row">
 					<div class="col-sm-8 blog-main">
-						<h2 class="sub-header">${boardnm }</h2>
+						<h2 class="sub-header">${boardNm }</h2>
 						<div class="table-responsive">
 							<table class="table table-striped">
 								<tr>
@@ -95,7 +95,7 @@
 										</c:choose>
 										</td>
 										
-										<td>${list.userid }</td>
+										<td>${list.userId }</td>
 										<td>${list.postdate_fmt }</td>
 									</tr>
 								</c:forEach>

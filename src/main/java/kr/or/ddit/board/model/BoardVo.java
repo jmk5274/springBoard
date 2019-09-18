@@ -3,66 +3,55 @@ package kr.or.ddit.board.model;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class BoardVo {
 
-	private int boardnum;
-	private String boardnm;
-	private String usestatus;
-	private Date boarddate;
-	private String userid;
+	private int boardNum;
+	private String boardNm;
+	private String useStatus;
+	private Date boardDate;
+	private String userId;
 	
-	public BoardVo() { }
-
-	public BoardVo(int boardnum, String boardnm, String usestatus, Date boarddate, String userid) {
-		this.boardnum = boardnum;
-		this.boardnm = boardnm;
-		this.usestatus = usestatus;
-		this.boarddate = boarddate;
-		this.userid = userid;
+	public BoardVo() {
 	}
-
-	public int getBoardnum() {
-		return boardnum;
+	public BoardVo(int boardNum, String boardNm, String useStatus, Date boardDate, String userId) {
+		this.boardNum = boardNum;
+		this.boardNm = boardNm;
+		this.useStatus = useStatus;
+		this.boardDate = boardDate;
+		this.userId = userId;
 	}
-
-	public void setBoardnum(int boardnum) {
-		this.boardnum = boardnum;
+	
+	public int getBoardNum() {
+		return boardNum;
 	}
-
-	public String getBoardnm() {
-		return boardnm;
+	public void setBoardNum(int boardNum) {
+		this.boardNum = boardNum;
 	}
-
-	public void setBoardnm(String boardnm) {
-		this.boardnm = boardnm;
+	public String getBoardNm() {
+		return boardNm;
 	}
-
-	public String getUsestatus() {
-		return usestatus;
+	public void setBoardNm(String boardNm) {
+		this.boardNm = boardNm;
 	}
-
-	public void setUsestatus(String usestatus) {
-		this.usestatus = usestatus;
+	public String getUseStatus() {
+		return useStatus;
 	}
-
-	public Date getBoarddate() {
-		return boarddate;
+	public void setUseStatus(String useStatus) {
+		this.useStatus = useStatus;
 	}
-
-	public void setBoarddate(Date boarddate) {
-		this.boarddate = boarddate;
+	public Date getBoardDate() {
+		return boardDate;
 	}
-
-	public String getUserid() {
-		return userid;
+	public void setBoardDate(Date boardDate) {
+		this.boardDate = boardDate;
 	}
-
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public String getUserId() {
+		return userId;
 	}
-
-	public String getBoarddate_fmt() {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		return sdf.format(boarddate);
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
+	
 }

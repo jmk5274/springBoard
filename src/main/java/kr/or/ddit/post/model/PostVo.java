@@ -10,23 +10,23 @@ public class PostVo {
 	private String postcont;
 	private Date postdate;
 	private String delstatus;
-	private String userid;
-	private int boardnum;
+	private String userId;
+	private int boardNum;
 	private int postnum2;
 	private int gn;
 	private int level;
 	
 	public PostVo() { }
 
-	public PostVo(int postnum, String postnm, String postcont, Date postdate, String delstatus, String userid,
-			int boardnum, int postnum2, int gn) {
+	public PostVo(int postnum, String postnm, String postcont, Date postdate, String delstatus, String userId,
+			int boardNum, int postnum2, int gn) {
 		this.postnum = postnum;
 		this.postnm = postnm;
 		this.postcont = postcont;
 		this.postdate = postdate;
 		this.delstatus = delstatus;
-		this.userid = userid;
-		this.boardnum = boardnum;
+		this.userId = userId;
+		this.boardNum = boardNum;
 		this.postnum2 = postnum2;
 		this.gn = gn;
 	}
@@ -80,19 +80,19 @@ public class PostVo {
 	}
 
 	public String getUserid() {
-		return userid;
+		return userId;
 	}
 
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setUserid(String userId) {
+		this.userId = userId;
 	}
 
 	public int getBoardnum() {
-		return boardnum;
+		return boardNum;
 	}
 
-	public void setBoardnum(int boardnum) {
-		this.boardnum = boardnum;
+	public void setBoardnum(int boardNum) {
+		this.boardNum = boardNum;
 	}
 
 	public int getPostnum2() {

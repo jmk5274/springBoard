@@ -1,16 +1,23 @@
 package kr.or.ddit.user.web;
 
+import java.util.List;
+
 import javax.annotation.Resource;
+import javax.servlet.ServletContext;
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import kr.or.ddit.board.model.BoardVo;
+import kr.or.ddit.board.service.IBoardService;
 import kr.or.ddit.user.model.UserVo;
 import kr.or.ddit.user.service.IUserService;
 
@@ -22,6 +29,9 @@ public class LoginController {
     @Resource(name = "userServiceImpl")
     private IUserService userService;
 	
+    @Resource(name = "boardServiceImpl")
+    private IBoardService boardService;
+    
     @RequestMapping(path = "login", method = RequestMethod.GET)
     public String loginView() {
 //		model.addAttribute("res", res);
@@ -42,7 +52,11 @@ public class LoginController {
 	* Method 설명 : 로그인 요청 처리
 	*/
 	@RequestMapping(path = "login", method = RequestMethod.POST)
-	public String loginProcess(String userId, String pass, String rememberMe, HttpServletResponse response, HttpSession session) {
+	public String loginProcess(Model model, HttpServletRequest request, String userId, String pass, String rememberMe, HttpServletResponse response, HttpSession session) {
+		
+		List<BoardVo> boardList = boardService.getBoardList();
+		
+		request.getServletContext().setAttribute("boardList", boardList);
 		
 		manageUserIdCookie(response, userId, rememberMe);
 		
@@ -51,8 +65,8 @@ public class LoginController {
 		if(user==null) {
 			return "login/login";
 		}else if(user.checkLoginValidate(userId, pass)) {
-			session.setAttribute("S_USERVO", user);
-			return "main";
+			session.setAttribute("userVo", user);
+			return "redirect:/main";
 		}else {
 			return "login/login";
 		}

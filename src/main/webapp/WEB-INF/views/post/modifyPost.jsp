@@ -104,7 +104,7 @@ function validation(){
 <%-- 	<input id="postNum2" name="postNum2" value="${postNum2 }" type="hidden"> --%>
 <!-- 	<input id="postNm" name="postNm" value="" type="hidden"> -->
 <!-- 	<input id="postCont" name="postCont" value="" type="hidden"> -->
-<%-- 	<input id="userId" name="userId" value="${pvo.userid }" type="hidden"> --%>
+<%-- 	<input id="userId" name="userId" value="${pvo.userId }" type="hidden"> --%>
 <!-- </form> -->
 
 	<!-- header -->

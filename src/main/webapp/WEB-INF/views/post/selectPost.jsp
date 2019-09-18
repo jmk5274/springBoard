@@ -52,7 +52,7 @@
 			</div>
 
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-			<h2 class="sub-header">${boardnm }</h2>
+			<h2 class="sub-header">${boardNm }</h2>
 				<form id="frm" class="form-horizontal" role="form" action="${cp }/modifyPost"
 					method="get" enctype="multipart/form-data">
 
@@ -61,7 +61,7 @@
 						<input type="hidden" name="postNum2" value="${pvo.postnum }"/>
 						<input type="hidden" name="gn" value="${pvo.gn }"/>
 						<input type="hidden" name="postNm" value="${pvo.postnm }"/>
-						<input type="hidden" name="userId" value="${pvo.userid }"/>
+						<input type="hidden" name="userId" value="${pvo.userId }"/>
 						<label for="postNm" class="col-sm-2 control-label">제목</label>
 						<div class="col-sm-6">
 	                    	<label class="control-label">${pvo.postnm } </label>
@@ -87,7 +87,7 @@
 					<div class="form-group">
 						<label for="attachedFile" class="col-sm-2 control-label"></label>
 						<div class="col-sm-6">
-						<c:if test="${uvo.userId == pvo.userid}">
+						<c:if test="${uvo.userId == pvo.userId}">
 							<input type="submit" class="btn btn-default" id="btnUpdqtePost" name="btnValue" value="수정"/>
 							<input type="submit" class="btn btn-default" id="btnDelPost" name="btnValue" value="삭제"/>
 						</c:if>
@@ -111,8 +111,8 @@
 										${cmt.cmtcont }
 									</c:otherwise>
 								</c:choose>
-								&nbsp;&nbsp;&nbsp;[${cmt.userid } / ${cmt.cmtdate_fmt }]</span>&nbsp;
-								<c:if test="${uvo.userId == cmt.userid && cmt.delstatus=='N'}">
+								&nbsp;&nbsp;&nbsp;[${cmt.userId } / ${cmt.cmtdate_fmt }]</span>&nbsp;
+								<c:if test="${uvo.userId == cmt.userId && cmt.delstatus=='N'}">
 									<input id="deleteCmt" type="button" class="btn btn-default delCmt" value="삭제"/>
 								</c:if>
 								

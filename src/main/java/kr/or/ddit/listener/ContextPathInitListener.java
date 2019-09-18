@@ -1,15 +1,11 @@
 package kr.or.ddit.listener;
 
-import java.util.ArrayList;
-
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import kr.or.ddit.user.model.UserVo;
 
 public class ContextPathInitListener implements ServletContextListener {
 	
@@ -21,7 +17,6 @@ public class ContextPathInitListener implements ServletContextListener {
 		ServletContext sc = sce.getServletContext();
 		sc.setAttribute("cp", sc.getContextPath());
 		
-		sc.setAttribute("S_USERVO_LIST", new ArrayList<UserVo>());
 		logger.debug("cp : {}", sc.getAttribute("cp"));
 	}
 

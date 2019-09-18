@@ -62,22 +62,22 @@
 					</div>
 				</form>
 
-				<c:forEach items="${list }" var="list">
+				<c:forEach items="${boardList }" var="list">
 					<form class="form-horizontal" role="form" action="${cp }/addBoard" method="post">
 						<div class="form-group">
-							<input type="hidden" name=boardNum value="${list.boardnum}"/>
+							<input type="hidden" name=boardNum value="${list.boardNum}"/>
 							<label for="board" class="col-sm-2 control-label">게시판 이름</label>
 							<div class="col-sm-2">
-								<input type="text" name="boardNm" class="form-control" value="${list.boardnm }"/>
+								<input type="text" name="boardNm" class="form-control" value="${list.boardNm }"/>
 							</div>
 							<div class="col-sm-1">
 								<select name="useStatus" class="form-control">
 									<c:choose>
-										<c:when test="${list.usestatus == 'Y' }">
+										<c:when test="${list.useStatus == 'Y' }">
 											<option selected>사용</option>
 											<option>미사용</option>
 										</c:when>
-										<c:when test="${list.usestatus == 'N' }">
+										<c:when test="${list.useStatus == 'N' }">
 											<option>사용</option>
 											<option selected>미사용</option>
 										</c:when>

@@ -9,16 +9,17 @@
   	</select>
   	
   	<insert id="insertBoard" parameterType="boardVo">
-  		insert into board1(boardnum, boardnm, usestatus, boarddate, userid)
-			values(BOARD1_SEQ.NEXTVAL, #{boardnm}, #{usestatus}, sysdate, #{userid})
+  		insert into board1(boardNum, boardNm, useStatus, boarddate, userId)
+			values(BOARD1_SEQ.NEXTVAL, #{boardNm}, #{useStatus}, sysdate, #{userId})
   	</insert>
   	
   	<update id="updateBoard" parameterType="boardVo">
-  		update board1 set usestatus=#{usestatus}, boardnm=#{boardnm}
-        where boardnum = #{boardnum}
+  		update board1 set useStatus=#{useStatus}, boardNm=#{boardNm}
+        where boardNum = #{boardNum}
+          and userId = #{userId}
   	</update>
   	
   	<select id="getBoard" parameterType="int" resultType="boardVo">
-  		select * from board1 where boardnum=#{boardnum}
+  		select * from board1 where boardNum=#{boardNum}
   	</select>
   </mapper>

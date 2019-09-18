@@ -2,39 +2,37 @@ package kr.or.ddit.board.repository;
 
 import java.util.List;
 
-import org.apache.ibatis.session.SqlSession;
+import javax.annotation.Resource;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.stereotype.Repository;
 
 import kr.or.ddit.board.model.BoardVo;
 
+@Repository
 public class BoardDaoImpl implements IBoardDao {
-	private static IBoardDao dao;
 	
-	private BoardDaoImpl() { }
+	@Resource(name = "sqlSessionTemplate")
+	private SqlSessionTemplate sqlSession;
 	
-	public static IBoardDao getInstance() {
-		if(dao==null) dao = new BoardDaoImpl();
-		
-		return dao;
-	}
-
 	@Override
-	public List<BoardVo> getBoardList(SqlSession sqlSession) {
+	public List<BoardVo> getBoardList() {
 		return sqlSession.selectList("board.getBoardList");
 	}
 
 	@Override
-	public int insertBoard(SqlSession sqlSession, BoardVo bvo) {
+	public int insertBoard(BoardVo bvo) {
 		return sqlSession.insert("board.insertBoard", bvo);
 	}
 
 	@Override
-	public int updateBoard(SqlSession sqlSession, BoardVo bvo) {
+	public int updateBoard(BoardVo bvo) {
 		return sqlSession.update("board.updateBoard", bvo);
 	}
 
 	@Override
-	public BoardVo getBoard(SqlSession sqlSession, int boardnum) {
-		return sqlSession.selectOne("board.getBoard", boardnum);
+	public BoardVo getBoard(int boardNum) {
+		return sqlSession.selectOne("board.getBoard", boardNum);
 	}
 	
 	

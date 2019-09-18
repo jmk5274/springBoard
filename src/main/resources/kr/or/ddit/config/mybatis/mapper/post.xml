@@ -5,18 +5,18 @@
 <mapper namespace="post">
 	
 	<select id="allPostList" parameterType="int" resultType="postVo">
-		select * from post where boardnum = #{boardNum}
+		select * from post where boardNum = #{boardNum}
 	</select>
 
 	<select id="getPostList" parameterType="map" resultType="postVo">
        select  *
        from   (select rownum rn, a.*
-               from  (select postnum, postnm, postcont, postdate, delstatus, userid, boardnum, postnum2, gn, level
+               from  (select postnum, postnm, postcont, postdate, delstatus, userId, boardNum, postnum2, gn, level
                        from post
                       start with postnum2 is null
                     connect by prior postnum = postnum2
                       order siblings by gn desc, postnum)a
-                where boardnum = #{boardNum})a
+                where boardNum = #{boardNum})a
         where a.rn between (#{pagesize} * (#{page} - 1)) + 1 and (#{pagesize} * #{page})
 	</select>
 	
@@ -29,13 +29,13 @@
 	</select>
 	
 	<insert id="insertPost" parameterType="postVo">
-		insert into post(postnum, postnm, postcont, postdate, delstatus, userid, boardnum, gn)
-   			values(#{postnum}, #{postnm}, #{postcont}, sysdate, 'N', #{userid}, #{boardnum}, gn_seq.nextval)
+		insert into post(postnum, postnm, postcont, postdate, delstatus, userId, boardNum, gn)
+   			values(#{postnum}, #{postnm}, #{postcont}, sysdate, 'N', #{userId}, #{boardNum}, gn_seq.nextval)
 	</insert>
 	
 	<insert id="insertPost2" parameterType="postVo">
-		insert into post(postnum, postnm, postcont, postdate, delstatus, userid, boardnum, postnum2, gn)
-   			values(#{postnum}, #{postnm}, #{postcont}, sysdate, 'N', #{userid}, #{boardnum}, #{postnum2}, #{gn})
+		insert into post(postnum, postnm, postcont, postdate, delstatus, userId, boardNum, postnum2, gn)
+   			values(#{postnum}, #{postnm}, #{postcont}, sysdate, 'N', #{userId}, #{boardNum}, #{postnum2}, #{gn})
 	</insert>
 	
 	<update id="deletePost" parameterType="postVo">

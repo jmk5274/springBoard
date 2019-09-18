@@ -9,8 +9,8 @@
 	</select>
 	
 	<insert id="insertCmt" parameterType="cmtVo">
-		insert into comments (cmtnum, cmtcont, cmtdate, postnum, userid, delstatus)
-   			values(comments_seq.nextval, #{cmtcont}, sysdate, #{postnum}, #{userid}, 'N')
+		insert into comments (cmtnum, cmtcont, cmtdate, postnum, userId, delstatus)
+   			values(comments_seq.nextval, #{cmtcont}, sysdate, #{postnum}, #{userId}, 'N')
 	</insert>
 	
 	<update id="deleteCmt" parameterType="int">
