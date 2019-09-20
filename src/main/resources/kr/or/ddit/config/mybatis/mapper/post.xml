@@ -11,17 +11,17 @@
 	<select id="getPostList" parameterType="map" resultType="postVo">
        select  *
        from   (select rownum rn, a.*
-               from  (select postnum, postnm, postcont, postdate, delstatus, userId, boardNum, postnum2, gn, level
+               from  (select postNum, postNm, postCont, postdate, delStatus, userId, boardNum, postNum2, gn, level
                        from post
-                      start with postnum2 is null
-                    connect by prior postnum = postnum2
-                      order siblings by gn desc, postnum)a
+                      start with postNum2 is null
+                    connect by prior postNum = postNum2
+                      order siblings by gn desc, postNum)a
                 where boardNum = #{boardNum})a
         where a.rn between (#{pagesize} * (#{page} - 1)) + 1 and (#{pagesize} * #{page})
 	</select>
 	
 	<select id="selectPost" parameterType="int" resultType="postVo">
-		select * from post where postnum = #{data}
+		select * from post where postNum = #{data}
 	</select>
 	
 	<select id="getPostSeq" resultType="int">
@@ -29,21 +29,21 @@
 	</select>
 	
 	<insert id="insertPost" parameterType="postVo">
-		insert into post(postnum, postnm, postcont, postdate, delstatus, userId, boardNum, gn)
-   			values(#{postnum}, #{postnm}, #{postcont}, sysdate, 'N', #{userId}, #{boardNum}, gn_seq.nextval)
+		insert into post(postNum, postNm, postCont, postdate, delstatus, userid, boardnum, gn)
+   			values(#{postNum}, #{postNm}, #{postCont}, sysdate, 'N', #{userId}, #{boardNum}, gn_seq.nextval)
 	</insert>
 	
 	<insert id="insertPost2" parameterType="postVo">
-		insert into post(postnum, postnm, postcont, postdate, delstatus, userId, boardNum, postnum2, gn)
-   			values(#{postnum}, #{postnm}, #{postcont}, sysdate, 'N', #{userId}, #{boardNum}, #{postnum2}, #{gn})
+		insert into post(postnum, postnm, postcont, postdate, delstatus, userid, boardnum, postnum2, gn)
+   			values(#{postNum}, #{postNm}, #{postCont}, sysdate, 'N', #{userId}, #{boardNum}, #{postNum2}, #{gn})
 	</insert>
 	
 	<update id="deletePost" parameterType="postVo">
-		update post set delstatus=#{delstatus} where postnum=#{postnum}
+		update post set delStatus=#{delStatus} where postNum=#{postNum2}
 	</update>
 	
 	<update id="updatePost" parameterType="postVo">
-		update post set postnm=#{postnm}, postcont=#{postcont}, postdate=sysdate where postnum=#{postnum}
+		update post set postNm=#{postNm}, postCont=#{postCont}, postDate=sysdate where postNum=#{postNum2}
 	</update>
 	
 </mapper>

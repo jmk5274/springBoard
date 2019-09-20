@@ -16,7 +16,6 @@
   	<update id="updateBoard" parameterType="boardVo">
   		update board1 set useStatus=#{useStatus}, boardNm=#{boardNm}
         where boardNum = #{boardNum}
-          and userId = #{userId}
   	</update>
   	
   	<select id="getBoard" parameterType="int" resultType="boardVo">

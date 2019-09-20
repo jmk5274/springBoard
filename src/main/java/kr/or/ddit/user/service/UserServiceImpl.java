@@ -2,13 +2,10 @@ package kr.or.ddit.user.service;
 
 import javax.annotation.Resource;
 
-import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Service;
 
 import kr.or.ddit.user.model.UserVo;
 import kr.or.ddit.user.repository.IUserDao;
-import kr.or.ddit.user.repository.UserDaoImpl;
-import kr.or.ddit.util.MybatisUtil;
 
 @Service
 public class UserServiceImpl implements IUserService {

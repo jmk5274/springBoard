@@ -4,16 +4,16 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="comments">
 	<select id="getCmtList" parameterType="int" resultType="cmtVo">
-		select * from comments where postnum = #{data}
+		select * from comments where postNum = #{data}
 		order by cmtnum
 	</select>
 	
 	<insert id="insertCmt" parameterType="cmtVo">
-		insert into comments (cmtnum, cmtcont, cmtdate, postnum, userId, delstatus)
-   			values(comments_seq.nextval, #{cmtcont}, sysdate, #{postnum}, #{userId}, 'N')
+		insert into comments (cmtnum, cmtcont, cmtdate, postNum, userId, delStatus)
+   			values(comments_seq.nextval, #{cmtCont}, sysdate, #{postNum}, #{userId}, 'N')
 	</insert>
 	
 	<update id="deleteCmt" parameterType="int">
-		update comments set delstatus = 'Y' where cmtnum=#{cmtnum}
+		update comments set delStatus = 'Y' where cmtnum=#{cmtNum}
 	</update>
 </mapper>

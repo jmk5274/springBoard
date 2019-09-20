@@ -2,51 +2,45 @@ package kr.or.ddit.post.model;
 
 public class AttachedfileVo {
 
-	private int atfnum;
-	private String atfnm;
-	private String atfpath;
-	private int postnum;
+	private int atfNum;
+	private String atfNm;
+	private String atfPath;
+	private int postNum;
 	
 	public AttachedfileVo() {
 	}
-
-	public AttachedfileVo(int atfnum, String atfnm, String atfpath, int postnum) {
-		this.atfnum = atfnum;
-		this.atfnm = atfnm;
-		this.atfpath = atfpath;
-		this.postnum = postnum;
+	
+	public AttachedfileVo(int atfNum, String atfNm, String atfPath, int postNum) {
+		this.atfNum = atfNum;
+		this.atfNm = atfNm;
+		this.atfPath = atfPath;
+		this.postNum = postNum;
 	}
-
-	public int getAtfnum() {
-		return atfnum;
+	
+	public int getAtfNum() {
+		return atfNum;
 	}
-
-	public void setAtfnum(int atfnum) {
-		this.atfnum = atfnum;
+	public void setAtfNum(int atfNum) {
+		this.atfNum = atfNum;
 	}
-
-	public String getAtfnm() {
-		return atfnm;
+	public String getAtfNm() {
+		return atfNm;
 	}
-
-	public void setAtfnm(String atfnm) {
-		this.atfnm = atfnm;
+	public void setAtfNm(String atfNm) {
+		this.atfNm = atfNm;
 	}
-
-	public String getAtfpath() {
-		return atfpath;
+	public String getAtfPath() {
+		return atfPath;
 	}
-
-	public void setAtfpath(String atfpath) {
-		this.atfpath = atfpath;
+	public void setAtfPath(String atfPath) {
+		this.atfPath = atfPath;
 	}
-
-	public int getPostnum() {
-		return postnum;
+	public int getPostNum() {
+		return postNum;
 	}
-
-	public void setPostnum(int postnum) {
-		this.postnum = postnum;
+	public void setPostNum(int postNum) {
+		this.postNum = postNum;
 	}
+	
 	
 }

@@ -46,6 +46,10 @@ $(document).ready(function() {
 
 	// 전송버튼 클릭이벤트
 	$("#savebutton").click(function(){
+		if($("#postNm").val()==""){
+			alert("제목을 입력해주세요");
+			return;
+		}
 		if(confirm("저장하시겠습니까?")) {
 			// id가 smarteditor인 textarea에 에디터에서 대입
 			oEditors.getById["smarteditor"].exec("UPDATE_CONTENTS_FIELD", []);
@@ -101,8 +105,8 @@ function validation(){
 					method="post" enctype="multipart/form-data">
 					<div class="form-group">
 						<input type="hidden" name="boardNum" value="${boardNum }"/>
-						<input type="hidden" name="postNum2" value="${postNum2 }"/>
-						<input type="hidden" name="gn" value="${gn }"/>
+						<input type="hidden" name="postNum2" value="${postNum2}"/>
+						<input type="hidden" name="gn" value="${gn}"/>
 						<label for="postNm" class="col-sm-2 control-label">제목</label>
 						<div class="col-sm-6">
 							<input type="text" class="form-control" id="postNm" name="postNm"

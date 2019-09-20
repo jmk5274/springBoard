@@ -95,6 +95,11 @@ function validation(){
 }
 </script>
 
+<style>
+	.x{
+		cursor: pointer;
+	}
+</style>
 </head>
 
 <body>
@@ -126,18 +131,18 @@ function validation(){
 					<div class="form-group">
 						<input type="hidden" name="boardNum" value="${boardNum }"/>
 						<input type="hidden" name="postNum2" value="${postNum2 }"/>
-						<input type="hidden" name="gn" value="${gn }"/>
+						<input type="hidden" name="gn" value="${pvo.gn }"/>
 						<label for="postNm" class="col-sm-2 control-label">제목</label>
 						<div class="col-sm-6">
 							<input type="text" class="form-control" id="postNm2" name="postNm"
-								placeholder="TITLE" value="${pvo.postnm }"/>
+								placeholder="TITLE" value="${pvo.postNm }"/>
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label for="postCont" class="col-sm-2 control-label">글 내용</label>
 						<div class="col-sm-8">
-							<textarea name="smarteditor" id="smarteditor" rows="10" cols="100" style="width:766px; height:412px;">${pvo.postcont }</textarea>
+							<textarea name="postCont" id="smarteditor" rows="10" cols="100" style="width:766px; height:412px;">${pvo.postCont }</textarea>
 						</div>
 					</div>
 					
@@ -146,8 +151,8 @@ function validation(){
 						<div class="col-sm-6">
 							<c:forEach items="${atfList }" var="atf">
 							<div class="attached">
-								<input type="hidden" name="file" value="${atf.atfnum }"/>
-								<label class="control-label cmt"> ${atf.atfnm } </label>&nbsp;<span class="x">&times;</span><br>
+								<input type="hidden" name="file" value="${atf.atfNum }"/>
+								<label class="control-label cmt"> ${atf.atfNm } </label>&nbsp;<span class="x">&times;</span><br>
 							</div>
 							</c:forEach>
 						</div>

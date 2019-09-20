@@ -1,79 +1,79 @@
 package kr.or.ddit.post.model;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 public class CommentsVo {
 
-	private int cmtnum;
-	private String cmtcont;
-	private Date cmtdate;
-	private int postnum;
+	private int cmtNum;
+	private String cmtCont;
+	@DateTimeFormat
+	private Date cmtDate;
+	private int postNum;
 	private String userId;
-	private String delstatus;
+	private String delStatus;
 
 	public CommentsVo() {
 	}
 
-	public CommentsVo(int cmtnum, String cmtcont, Date cmtdate, int postnum, String userId) {
-		this.cmtnum = cmtnum;
-		this.cmtcont = cmtcont;
-		this.cmtdate = cmtdate;
-		this.postnum = postnum;
+	public CommentsVo(int cmtNum, String cmtCont, Date cmtDate, int postNum, String userId, String delStatus) {
+		this.cmtNum = cmtNum;
+		this.cmtCont = cmtCont;
+		this.cmtDate = cmtDate;
+		this.postNum = postNum;
 		this.userId = userId;
+		this.delStatus = delStatus;
 	}
 
-	public String getDelstatus() {
-		return delstatus;
+	public int getCmtNum() {
+		return cmtNum;
 	}
 
-	public void setDelstatus(String delstatus) {
-		this.delstatus = delstatus;
+	public void setCmtNum(int cmtNum) {
+		this.cmtNum = cmtNum;
 	}
 
-	public int getCmtnum() {
-		return cmtnum;
+	public String getCmtCont() {
+		return cmtCont;
 	}
 
-	public void setCmtnum(int cmtnum) {
-		this.cmtnum = cmtnum;
+	public void setCmtCont(String cmtCont) {
+		this.cmtCont = cmtCont;
 	}
 
-	public String getCmtcont() {
-		return cmtcont;
+	public Date getCmtDate() {
+		return cmtDate;
 	}
 
-	public void setCmtcont(String cmtcont) {
-		this.cmtcont = cmtcont;
+	public void setCmtDate(Date cmtDate) {
+		this.cmtDate = cmtDate;
 	}
 
-	public Date getCmtdate() {
-		return cmtdate;
+	public int getPostNum() {
+		return postNum;
 	}
 
-	public void setCmtdate(Date cmtdate) {
-		this.cmtdate = cmtdate;
+	public void setPostNum(int postNum) {
+		this.postNum = postNum;
 	}
 
-	public int getPostnum() {
-		return postnum;
-	}
-
-	public void setPostnum(int postnum) {
-		this.postnum = postnum;
-	}
-
-	public String getUserid() {
+	public String getUserId() {
 		return userId;
 	}
 
-	public void setUserid(String userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 
-	public String getCmtdate_fmt() {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		return sdf.format(cmtdate);
+	public String getDelStatus() {
+		return delStatus;
 	}
+
+	public void setDelStatus(String delStatus) {
+		this.delStatus = delStatus;
+	}
+
+	
 	
 }

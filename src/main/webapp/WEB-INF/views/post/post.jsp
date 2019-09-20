@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,14 +69,14 @@
 
 								<c:forEach items="${postList }" var="list">
 									<c:choose>
-										<c:when test="${list.delstatus=='N' }">
-											<tr class="postTr" data-postnum="${ list.postnum }">
+										<c:when test="${list.delStatus=='N' }">
+											<tr class="postTr" data-postNum="${ list.postNum }">
 										</c:when>
 										<c:otherwise>
-											<tr class="postTr" data-postnum="삭제">
+											<tr class="postTr" data-postNum="">
 										</c:otherwise>
 									</c:choose>
-										<td>${list.postnum }</td>
+										<td>${list.postNum }</td>
 										
 										<td>
 										<c:forEach begin="0" end="${(list.level-1)*2 }" var="i">
@@ -86,17 +87,17 @@
 										</c:if>
 										
 										<c:choose>
-											<c:when test="${list.delstatus == 'Y' }">
+											<c:when test="${list.delStatus == 'Y' }">
 												삭제된 게시글입니다.
 											</c:when>
 											<c:otherwise>
-												${list.postnm }
+												${list.postNm }
 											</c:otherwise>										
 										</c:choose>
 										</td>
 										
 										<td>${list.userId }</td>
-										<td>${list.postdate_fmt }</td>
+										<td><fmt:formatDate value="${list.postDate }" pattern="yyyy-MM-dd"/> </td>
 									</tr>
 								</c:forEach>
 							</table>

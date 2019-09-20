@@ -3,15 +3,13 @@ package kr.or.ddit.post.repository;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.ibatis.session.SqlSession;
-
 import kr.or.ddit.post.model.AttachedfileVo;
 import kr.or.ddit.post.model.CommentsVo;
 import kr.or.ddit.post.model.PostVo;
 
 public interface IPostDao {
 	
-	public List<PostVo> allPostList(SqlSession sqlSession, int boardNum);
+	public List<PostVo> allPostList(int boardNum);
 	
 	/**
 	* Method : getPostList
@@ -22,7 +20,7 @@ public interface IPostDao {
 	* @return
 	* Method 설명 : boardNum을 파라미터로 보내 일치하는 게시판 리스트를 가져온다.
 	 */
-	public List<PostVo> getPostList(SqlSession sqlSession, Map map);
+	public List<PostVo> getPostList(Map map);
 	
 	/**
 	* Method : selectPost
@@ -33,7 +31,7 @@ public interface IPostDao {
 	* @return
 	* Method 설명 : postNum을 파라미터로 보내 일치하는 게시글 정보를 가져온다.
 	 */
-	public PostVo selectPost(SqlSession sqlSession, int postNum);
+	public PostVo selectPost(int postNum);
 	
 	/**
 	* Method : getCmtList
@@ -44,7 +42,7 @@ public interface IPostDao {
 	* @return
 	* Method 설명 : postNum을 파라미터로 보내 일치하는 덧글 리스트를 가져온다.
 	 */
-	public List<CommentsVo> getCmtList(SqlSession sqlSession, int postNum);
+	public List<CommentsVo> getCmtList(int postNum);
 	
 	/**
 	* Method : insertCmt
@@ -55,26 +53,26 @@ public interface IPostDao {
 	* @return
 	* Method 설명 : 덧글 저장
 	 */
-	public int insertCmt(SqlSession sqlSession, CommentsVo cvo);
+	public int insertCmt(CommentsVo cvo);
 	
-	public int getPostSeq(SqlSession sqlSession);
+	public int getPostSeq();
 	
-	public int insertPost(SqlSession sqlSession, PostVo postVo);
+	public int insertPost(PostVo postVo);
 	
-	public int insertPost2(SqlSession sqlSession, PostVo postVo);
+	public int insertPost2(PostVo postVo);
 	
-	public int insertAtf(SqlSession sqlSession, AttachedfileVo atfVo);
+	public int insertAtf(AttachedfileVo atfVo);
 	
-	public int deletePost(SqlSession sqlSession, PostVo postVo);
+	public int deletePost(PostVo postVo);
 	
-	public int updatePost(SqlSession sqlSession, PostVo postVo);
+	public int updatePost(PostVo postVo);
 	
-	public List<AttachedfileVo> getAttachedFile(SqlSession sqlSession, int postnum);
+	public List<AttachedfileVo> getAttachedFile(int postNum);
 	
-	public int deleteAtf(SqlSession sqlSession, int atfnum);
+	public int deleteAtf(int atfnum);
 	
-	public int deleteCmt(SqlSession sqlSession, int cmtnum);
+	public int deleteCmt(int cmtnum);
 	
-	public AttachedfileVo selectAtf(SqlSession sqlSession, int atfnum);
+	public AttachedfileVo selectAtf(int atfnum);
 
 }

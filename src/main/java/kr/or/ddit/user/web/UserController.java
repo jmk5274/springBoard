@@ -22,9 +22,9 @@ import kr.or.ddit.user.model.UserVo;
 import kr.or.ddit.user.service.IUserService;
 
 @Controller
-public class LoginController {
+public class UserController {
 	
-    private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
     
     @Resource(name = "userServiceImpl")
     private IUserService userService;
@@ -110,4 +110,10 @@ public class LoginController {
 //		
 //	}
 
+	@RequestMapping("logout")
+	public String logout(HttpSession session) {
+		session.invalidate();	//세션 모든 내용 지우기
+		return "redirect:/login";
+	}
+	
 }

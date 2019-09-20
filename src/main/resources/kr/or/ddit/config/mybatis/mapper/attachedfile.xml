@@ -4,21 +4,21 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="atf">
 	<insert id="insertAtf" parameterType="atfVo">
-		insert into attachedfile(atfnum, atfnm, atfpath, postnum)
-    		values(attachedfile_seq.nextval, #{atfnm}, #{atfpath}, #{postnum})
+		insert into attachedfile(atfnum, atfnm, atfpath, postNum)
+    		values(attachedfile_seq.nextval, #{atfNm}, #{atfPath}, #{postNum})
 	</insert>
 
 	<select id="getAttachedFile" parameterType="int" resultType="atfVo">
 		select *
 		  from attachedfile
-		 where postnum = #{postnum}
+		 where postNum = #{postNum}
 	</select>
 	
 	<delete id="deleteAtf" parameterType="int">
-		delete from attachedfile where atfnum=#{atfnum}
+		delete from attachedfile where atfnum=#{atfNum}
 	</delete>
 	
 	<select id="selectAtf" parameterType="int" resultType="atfVo">
-		select * from attachedfile where atfnum=#{atfnum} 
+		select * from attachedfile where atfnum=#{atfNum} 
 	</select>
 </mapper>

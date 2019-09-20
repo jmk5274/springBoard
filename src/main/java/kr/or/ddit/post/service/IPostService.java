@@ -57,7 +57,7 @@ public interface IPostService {
 	
 	public int updatePost(PostVo postVo);
 	
-	public List<AttachedfileVo> getAttachedFile(int postnum);
+	public List<AttachedfileVo> getAttachedFile(int postNum);
 	
 	public int deleteAtf(int atfnum);
 	
