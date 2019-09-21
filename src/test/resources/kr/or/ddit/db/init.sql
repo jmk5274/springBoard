@@ -10,6 +10,17 @@ truncate table post;
 truncate table comments;
 truncate table attachedfile;
 
+drop sequence post_seq;
+drop sequence board1_seq;
+drop sequence comments_seq;
+drop sequence attachedfile_seq;
+drop sequence gn_seq;
+
+create sequence post_seq start with 182 increment By 1 maxvalue 10000;
+create sequence board1_seq start with 62 increment By 1 maxvalue 10000;
+create sequence comments_seq start with 102 increment By 1 maxvalue 10000;
+create sequence attachedfile_seq start with 222 increment By 1 maxvalue 10000;
+create sequence gn_seq start with 102 increment By 1 maxvalue 10000;
 
 Insert into USERS (USERID,USERNM,PASS,REG_DT,ALIAS,ADDR1,ADDR2,ZIPCODE,FILENAME,REALFILENAME,REALFILENAME2) values ('brown','브라운','c6347b73d5b1f7c77f8be828ee3e871c819578f23779c7d5e082ae2b36a44',to_date('2019/08/12','YYYY/MM/DD'),'곰',null,null,null,'brown.png','e:\upload\2019\09\425bf99a-da0d-4d41-a804-6746cb576548.png',null);
 Insert into USERS (USERID,USERNM,PASS,REG_DT,ALIAS,ADDR1,ADDR2,ZIPCODE,FILENAME,REALFILENAME,REALFILENAME2) values ('cony','코니','c6347b73d5b1f7c77f8be828ee3e871c819578f23779c7d5e082ae2b36a44',to_date('2019/08/12','YYYY/MM/DD'),'토끼',null,null,null,'cony.png','D:\picture\535d2599-4fb5-4fce-a514-11320de99aec',null);

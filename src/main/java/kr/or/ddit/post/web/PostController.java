@@ -64,16 +64,6 @@ public class PostController{
 		return "post/post";
 	}
 	
-//	@Override
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		String boardNum = (String) request.getAttribute("boardNum");
-//		String res = (String) request.getAttribute("res");
-//		request.setAttribute("boardNum", boardNum);
-//		request.setAttribute("res", res);
-//		
-//		doGet(request, response);
-//	}
-	
 	@GetMapping("selectPost")
 	public String selectPostView(String boardNm, String postNum, Integer boardNum, Model model) {
 		
@@ -99,15 +89,6 @@ public class PostController{
 			return "post/selectPost";
 		}
 	}
-	
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		request.setCharacterEncoding("utf-8");
-//		String postNum = String.valueOf(request.getAttribute("postNum"));
-//		request.setAttribute("postNum", postNum);
-//		request.setAttribute("boardNum", request.getAttribute("boardNum"));
-//		
-//		doGet(request, response);
-//	}
 	
 	@GetMapping("writePost")
 	public String writePostView(Integer boardNum, Model model) {

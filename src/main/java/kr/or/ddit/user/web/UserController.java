@@ -66,7 +66,7 @@ public class UserController {
 			return "login/login";
 		}else if(user.checkLoginValidate(userId, pass)) {
 			session.setAttribute("userVo", user);
-			return "redirect:/main";
+			return "main";
 		}else {
 			return "login/login";
 		}
@@ -84,32 +84,15 @@ public class UserController {
 	        
 	     response.addCookie(cookie);
 	}
-//		request.setCharacterEncoding("utf-8");
-//		
-//		String userId = request.getParameter("userId");
-//		String pass = request.getParameter("pass");
-//		
-//		UserVo uvo = userServ.getUser(userId);
-//		
-//		String res = "";
-//		
-//		if(uvo==null) {
-//			res = "아이디를 다시 확인해주세요";
-//			request.setAttribute("res", res);
-//			doGet(request, response);
-//		}else if(uvo.getUserId().equals(userId) && uvo.getPass().equals(pass)) {
-//			HttpSession session = request.getSession();
-//			
-//			session.setAttribute("userVo", uvo);
-//			request.getRequestDispatcher("/main.jsp").forward(request, response);
-//		}else {
-//			res = "비밀번호를 다시 확인해주세요";
-//			request.setAttribute("res", res);
-//			doGet(request, response);
-//		}
-//		
-//	}
 
+	/**
+	* Method : logout
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* @param session
+	* @return
+	* Method 설명 : 로그아웃
+	*/
 	@RequestMapping("logout")
 	public String logout(HttpSession session) {
 		session.invalidate();	//세션 모든 내용 지우기
