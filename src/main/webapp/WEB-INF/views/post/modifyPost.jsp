@@ -151,7 +151,7 @@ function validation(){
 						<div class="col-sm-6">
 							<c:forEach items="${atfList }" var="atf">
 							<div class="attached">
-								<input type="hidden" name="file" value="${atf.atfNum }"/>
+								<input type="hidden" name="files" value="${atf.atfNum }"/>
 								<label class="control-label cmt"> ${atf.atfNm } </label>&nbsp;<span class="x">&times;</span><br>
 							</div>
 							</c:forEach>

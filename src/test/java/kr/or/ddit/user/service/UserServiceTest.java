@@ -18,6 +18,12 @@ public class UserServiceTest extends RootTestConfig{
 	private IUserService serv;
 	private String userId = "brown";
 	
+	/**
+	* Method : getUserTest
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : 사용자 정보 조회
+	*/
 	@Test
 	public void getUserTest() {
 		/***Given***/

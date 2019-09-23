@@ -189,13 +189,11 @@ public class PostController{
 	}
 	
 	@PostMapping("modifyPost")
-	public String modifyPost(PostVo postVo, Integer boardNum, String[] file, Model model, @RequestPart("attachedFile") List<MultipartFile> attachedFiles) {
+	public String modifyPost(PostVo postVo, Integer boardNum, Integer[] files, Model model, @RequestPart("attachedFile") List<MultipartFile> attachedFiles) {
 		
 		int cnt = postServ.updatePost(postVo);
 		
 		List<AttachedfileVo> avoList = postServ.getAttachedFile(postVo.getPostNum2());
-		
-		String files[] = file;
 		
 		List<Integer> atfnumList = new ArrayList<Integer>();
 		
@@ -211,8 +209,8 @@ public class PostController{
 			
 			for(int atfnum : atfnumList) {
 				boolean flag = true;
-				for(String filenum : files) {
-					if(atfnum == Integer.parseInt(filenum)) {
+				for(Integer filenum : files) {
+					if(atfnum == filenum) {
 						flag = false;
 						break;
 					}

@@ -27,6 +27,12 @@ public class BoardServiceTest extends RootTestConfig{
 	@Resource(name = "boardServiceImpl")
 	private IBoardService serv;
 	
+	/**
+	* Method : getBoardListTest
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : 게시판 리스트 조회
+	*/
 	@Test
 	public void getBoardListTest() {
 		/***Given***/
@@ -38,6 +44,13 @@ public class BoardServiceTest extends RootTestConfig{
 		assertTrue(list.size()>2);
 	}
 	
+	/**
+	* Method : insertBoardTest
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* @throws ParseException
+	* Method 설명 : 게시판 생성
+	*/
 	@Test
 	public void insertBoardTest() throws ParseException {
 		/***Given***/
@@ -52,6 +65,13 @@ public class BoardServiceTest extends RootTestConfig{
 		assertEquals(1, cnt);
 	}
 	
+	/**
+	* Method : updateBoardTest
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* @throws ParseException
+	* Method 설명 : 게시판 정보 수정
+	*/
 	@Test
 	public void updateBoardTest() throws ParseException {
 		/***Given***/
@@ -66,6 +86,12 @@ public class BoardServiceTest extends RootTestConfig{
 		assertEquals(1, cnt);
 	}
 	
+	/**
+	* Method : getBoardTest
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : 특정 게시글 조회
+	*/
 	@Test
 	public void getBoardTest() {
 		/***Given***/

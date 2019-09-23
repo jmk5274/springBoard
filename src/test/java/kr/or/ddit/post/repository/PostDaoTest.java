@@ -24,6 +24,12 @@ public class PostDaoTest extends RootTestConfig{
 	@Resource(name = "postDaoImpl")
 	private IPostDao dao;
 	
+	/**
+	* Method : getPostListTest
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : 게시글 페이징 리스트
+	*/
 	@Test
 	public void getPostListTest() {
 		/***Given***/
@@ -44,6 +50,12 @@ public class PostDaoTest extends RootTestConfig{
 		assertEquals(5, list.size());
 	}
 	
+	/**
+	* Method : selectPostTest
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : 게시글 조회
+	*/
 	@Test
 	public void selectPostTest() {
 		/***Given***/
@@ -56,6 +68,12 @@ public class PostDaoTest extends RootTestConfig{
 		assertEquals("테스트", pvo.getPostNm());
 	}
 	
+	/**
+	* Method : getCmtListTest
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : 댓글 조회
+	*/
 	@Test
 	public void getCmtListTest() {
 		/***Given***/
@@ -68,6 +86,12 @@ public class PostDaoTest extends RootTestConfig{
 		assertTrue(list.size()>2);
 	}
 	
+	/**
+	* Method : insertCmtTest
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : 댓글 생성
+	*/
 	@Test
 	public void insertCmtTest() {
 		/***Given***/
@@ -80,6 +104,12 @@ public class PostDaoTest extends RootTestConfig{
 		assertEquals(1, cnt);
 	}
 	
+	/**
+	* Method : getPostSeqTest
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : postNum_seq_nextval 조회
+	*/
 	@Test
 	public void getPostSeqTest() {
 		/***Given***/
@@ -91,6 +121,12 @@ public class PostDaoTest extends RootTestConfig{
 		assertEquals(182, seq);
 	}
 	
+	/**
+	* Method : insertPostTest
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : 게시글 작성
+	*/
 	@Test
 	public void insertPostTest() {
 		/***Given***/
@@ -107,6 +143,12 @@ public class PostDaoTest extends RootTestConfig{
 		assertEquals(1, cnt);
 	}
 	
+	/**
+	* Method : insertPost2Test
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : 답글 작성
+	*/
 	@Test
 	public void insertPost2Test() {
 		/***Given***/
@@ -126,6 +168,12 @@ public class PostDaoTest extends RootTestConfig{
 		assertEquals(1, cnt);
 	}
 	
+	/**
+	* Method : insertAtfTest
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : 첨부파일 추가
+	*/
 	@Test
 	public void insertAtfTest() {
 		/***Given***/
@@ -141,6 +189,12 @@ public class PostDaoTest extends RootTestConfig{
 		assertEquals(1, cnt);
 	}
 	
+	/**
+	* Method : deletePostTest
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : 첨부파일 삭제
+	*/
 	@Test 
 	public void deletePostTest() {
 		/***Given***/
@@ -155,6 +209,12 @@ public class PostDaoTest extends RootTestConfig{
 		assertEquals(1, cnt);
 	}
 	
+	/**
+	* Method : updatePostTest
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : 게시글 수정
+	*/
 	@Test
 	public void updatePostTest() {
 		/***Given***/
@@ -170,6 +230,12 @@ public class PostDaoTest extends RootTestConfig{
 		assertEquals(1, cnt);
 	}
 	
+	/**
+	* Method : getAttachedFileTest
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : postNum에 해당하는 첨부파일 전체 조회
+	*/
 	@Test
 	public void getAttachedFileTest() {
 		/***Given***/
@@ -182,6 +248,12 @@ public class PostDaoTest extends RootTestConfig{
 		assertTrue(list.size()>1);
 	}
 			
+	/**
+	* Method : deleteAtfTest
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : 첨부파일 삭제
+	*/
 	@Test
 	public void deleteAtfTest() {
 		/***Given***/
@@ -194,6 +266,12 @@ public class PostDaoTest extends RootTestConfig{
 		assertEquals(1, cnt);
 	}
 	
+	/**
+	* Method : deleteCmtTest
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : 댓글 삭제
+	*/
 	@Test
 	public void deleteCmtTest() {
 		/***Given***/
@@ -206,6 +284,12 @@ public class PostDaoTest extends RootTestConfig{
 		assertEquals(1, cnt);
 	}
 	
+	/**
+	* Method : selectAtfTest
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : 첨부파일 단일 조회
+	*/
 	@Test
 	public void selectAtfTest() {
 		/***Given***/

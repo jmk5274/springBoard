@@ -23,6 +23,7 @@
 </style>
 <script>
 	$(document).ready(function(){
+		
 		$(".delCmt").on("click", function(){
 			var cmtNum = $(this).data("cmtnum");
 			
@@ -116,12 +117,11 @@
 											<font color="silver">삭제된 댓글입니다.</font>
 										</c:when>
 										<c:otherwise>
-											${cmt.cmtCont }
+											${cmt.cmtCont }&nbsp;&nbsp;&nbsp;[${cmt.userId } / <fmt:formatDate value="${cmt.cmtDate }" pattern="yyyy-MM-dd"/>]
 										</c:otherwise>
 									</c:choose>
 									<c:if test="${uvo.userId == cmt.userId && cmt.delStatus=='N'}">
-										&nbsp;&nbsp;&nbsp;[${cmt.userId } / <fmt:formatDate value="${cmt.cmtDate }" pattern="yyyy-MM-dd"/>]&nbsp;
-										<span id="deleteCmt" class="delCmt glyphicon glyphicon-trash" data-cmtnum="${cmt.cmtNum }"></span>
+										&nbsp;<span id="deleteCmt" class="delCmt glyphicon glyphicon-trash" data-cmtnum="${cmt.cmtNum }"></span>
 									</c:if>
 									</span>
 								</div>

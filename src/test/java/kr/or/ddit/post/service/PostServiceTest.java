@@ -28,6 +28,12 @@ public class PostServiceTest extends RootTestConfig{
 	@Resource(name = "postServiceImpl")
 	private IPostService serv;
 	
+	/**
+	* Method : getPostListTest
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : 게시글 페이징 리스트
+	*/
 	@Test
 	public void getPostListTest() {
 		/***Given***/
@@ -48,6 +54,12 @@ public class PostServiceTest extends RootTestConfig{
 		assertEquals(5, list.size());
 	}
 
+	/**
+	* Method : selectPostTest
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : 게시글 조회
+	*/
 	@Test
 	public void selectPostTest() {
 		/***Given***/
@@ -63,6 +75,12 @@ public class PostServiceTest extends RootTestConfig{
 		assertEquals(0, cmtList.size());
 	}
 	
+	/**
+	* Method : insertCmtTest
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : 댓글 생성
+	*/
 	@Test
 	public void insertCmtTest() {
 		/***Given***/
@@ -75,6 +93,12 @@ public class PostServiceTest extends RootTestConfig{
 		assertEquals(1, cnt);
 	}
 	
+	/**
+	* Method : deletePost
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : 댓글 삭제
+	*/
 	@Test 
 	public void deletePost() {
 		/***Given***/
@@ -89,6 +113,12 @@ public class PostServiceTest extends RootTestConfig{
 		assertEquals(1, cnt);
 	}
 	
+	/**
+	* Method : updatePost
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : 게시글 수정
+	*/
 	@Test
 	public void updatePost() {
 		/***Given***/
@@ -104,6 +134,12 @@ public class PostServiceTest extends RootTestConfig{
 		assertEquals(1, cnt);
 	}
 	
+	/**
+	* Method : getAttachedFile
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : postNum에 해당하는 첨부파일 전체 조회
+	*/
 	@Test
 	public void getAttachedFile() {
 		/***Given***/
@@ -116,6 +152,12 @@ public class PostServiceTest extends RootTestConfig{
 		assertEquals(3, list.size());
 	}
 	
+	/**
+	* Method : deleteAtf
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : 첨부파일 삭제
+	*/
 	@Test
 	public void deleteAtf() {
 		/***Given***/
@@ -128,6 +170,12 @@ public class PostServiceTest extends RootTestConfig{
 		assertEquals(1, cnt);
 	}
 	
+	/**
+	* Method : deleteCmt
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : 댓글 삭제
+	*/
 	@Test
 	public void deleteCmt() {
 		/***Given***/
@@ -140,6 +188,12 @@ public class PostServiceTest extends RootTestConfig{
 		assertEquals(1, cnt);
 	}
 	
+	/**
+	* Method : selectAtf
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* Method 설명 : 첨부파일 단일 조회
+	*/
 	@Test
 	public void selectAtf() {
 		/***Given***/

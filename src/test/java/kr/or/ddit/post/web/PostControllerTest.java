@@ -110,6 +110,13 @@ public class PostControllerTest extends WebTestConfig{
 		.andExpect(view().name("redirect:/post"));
 	}
 	
+	/**
+	* Method : modifyPost
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* @throws Exception
+	* Method 설명 : 게시글 정보 수정
+	*/
 	@Test
 	public void modifyPost() throws Exception {
 		File f = new File("src/test/resources/kr/or/ddit/test/brown.png");
@@ -127,6 +134,13 @@ public class PostControllerTest extends WebTestConfig{
 		.andExpect(view().name("redirect:/selectPost"));
 	}
 	
+	/**
+	* Method : insertCmt
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* @throws Exception
+	* Method 설명 : 댓글 생성
+	*/
 	@Test
 	public void insertCmt() throws Exception {
 		MockHttpSession session = new MockHttpSession();
@@ -143,6 +157,13 @@ public class PostControllerTest extends WebTestConfig{
 		.andExpect(view().name("redirect:/selectPost"));
 	}
 	
+	/**
+	* Method : DeleteCmt
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* @throws Exception
+	* Method 설명 : 댓글 삭제
+	*/
 	@Test
 	public void DeleteCmt() throws Exception {
 		mockMvc.perform(post("/deleteCmt")
@@ -152,4 +173,18 @@ public class PostControllerTest extends WebTestConfig{
 		.andExpect(view().name("redirect:/selectPost"));
 	}
 	
+	/**
+	* Method : fileDownloadView
+	* 작성자 : JEON MIN GYU
+	* 변경이력 :
+	* @throws Exception
+	* Method 설명 : 파일 다운로드 창 요청
+	*/
+	@Test
+	public void fileDownloadView() throws Exception {
+		mockMvc.perform(post("/fileDownloadView")
+				.param("atfNum", "6"))
+		.andExpect(status().isOk())
+		.andExpect(view().name("fileDownloadView"));
+	}
 }
